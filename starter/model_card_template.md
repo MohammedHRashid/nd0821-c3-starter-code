@@ -31,7 +31,7 @@ Our model achieved:
 
 
 ## Ethical Considerations
-* We have iterated the performance over categorical slices to identify whether there are any potential biases in the model. These slice performances can be found in ```slices_output.txt```.
+We have iterated the performance over categorical slices to identify whether there are any potential biases in the model. These slice performances can be found in ```slices_output.txt```.
 
 ## Caveats and Recommendations
 
