@@ -1,0 +1,116 @@
+
+Feature: workclass: 
+Slice: Private, Precision: 0.75, Recall: 0.60, FBeta: 0.67 
+Slice: ?, Precision: 0.63, Recall: 0.31, FBeta: 0.41 
+Slice: Self-emp-inc, Precision: 0.82, Recall: 0.79, FBeta: 0.80 
+Slice: Local-gov, Precision: 0.73, Recall: 0.66, FBeta: 0.69 
+Slice: Federal-gov, Precision: 0.75, Recall: 0.69, FBeta: 0.72 
+Slice: State-gov, Precision: 0.83, Recall: 0.68, FBeta: 0.74 
+Slice: Self-emp-not-inc, Precision: 0.73, Recall: 0.49, FBeta: 0.58 
+Slice: Without-pay, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+
+Feature: education: 
+Slice: 9th, Precision: 1.00, Recall: 0.00, FBeta: 0.00 
+Slice: HS-grad, Precision: 0.74, Recall: 0.34, FBeta: 0.47 
+Slice: Some-college, Precision: 0.70, Recall: 0.46, FBeta: 0.55 
+Slice: Bachelors, Precision: 0.74, Recall: 0.76, FBeta: 0.75 
+Slice: Masters, Precision: 0.80, Recall: 0.85, FBeta: 0.82 
+Slice: 5th-6th, Precision: 1.00, Recall: 0.20, FBeta: 0.33 
+Slice: Prof-school, Precision: 0.88, Recall: 0.88, FBeta: 0.88 
+Slice: Assoc-voc, Precision: 0.68, Recall: 0.56, FBeta: 0.62 
+Slice: Assoc-acdm, Precision: 0.64, Recall: 0.62, FBeta: 0.63 
+Slice: 11th, Precision: 1.00, Recall: 0.17, FBeta: 0.29 
+Slice: 12th, Precision: 1.00, Recall: 0.40, FBeta: 0.57 
+Slice: 7th-8th, Precision: 1.00, Recall: 0.25, FBeta: 0.40 
+Slice: 10th, Precision: 1.00, Recall: 0.20, FBeta: 0.33 
+Slice: 1st-4th, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Doctorate, Precision: 0.85, Recall: 0.91, FBeta: 0.88 
+Slice: Preschool, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+
+Feature: marital-status: 
+Slice: Divorced, Precision: 0.84, Recall: 0.39, FBeta: 0.53 
+Slice: Separated, Precision: 1.00, Recall: 0.08, FBeta: 0.14 
+Slice: Never-married, Precision: 0.83, Recall: 0.35, FBeta: 0.49 
+Slice: Married-civ-spouse, Precision: 0.75, Recall: 0.66, FBeta: 0.70 
+Slice: Widowed, Precision: 1.00, Recall: 0.13, FBeta: 0.24 
+Slice: Married-spouse-absent, Precision: 1.00, Recall: 0.29, FBeta: 0.44 
+Slice: Married-AF-spouse, Precision: 1.00, Recall: 0.33, FBeta: 0.50 
+
+Feature: occupation: 
+Slice: Craft-repair, Precision: 0.67, Recall: 0.39, FBeta: 0.49 
+Slice: Handlers-cleaners, Precision: 1.00, Recall: 0.00, FBeta: 0.00 
+Slice: Exec-managerial, Precision: 0.79, Recall: 0.77, FBeta: 0.78 
+Slice: Transport-moving, Precision: 0.80, Recall: 0.21, FBeta: 0.34 
+Slice: Adm-clerical, Precision: 0.70, Recall: 0.50, FBeta: 0.58 
+Slice: Tech-support, Precision: 0.69, Recall: 0.70, FBeta: 0.70 
+Slice: Farming-fishing, Precision: 0.89, Recall: 0.35, FBeta: 0.50 
+Slice: Protective-serv, Precision: 0.76, Recall: 0.54, FBeta: 0.63 
+Slice: Prof-specialty, Precision: 0.79, Recall: 0.76, FBeta: 0.77 
+Slice: Machine-op-inspct, Precision: 0.68, Recall: 0.33, FBeta: 0.45 
+Slice: ?, Precision: 0.63, Recall: 0.31, FBeta: 0.41 
+Slice: Other-service, Precision: 0.80, Recall: 0.17, FBeta: 0.28 
+Slice: Sales, Precision: 0.71, Recall: 0.62, FBeta: 0.66 
+Slice: Priv-house-serv, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Armed-Forces, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+
+Feature: relationship: 
+Slice: Not-in-family, Precision: 0.82, Recall: 0.38, FBeta: 0.52 
+Slice: Unmarried, Precision: 0.93, Recall: 0.27, FBeta: 0.41 
+Slice: Husband, Precision: 0.76, Recall: 0.66, FBeta: 0.70 
+Slice: Wife, Precision: 0.70, Recall: 0.63, FBeta: 0.66 
+Slice: Own-child, Precision: 0.33, Recall: 0.07, FBeta: 0.11 
+Slice: Other-relative, Precision: 0.67, Recall: 0.29, FBeta: 0.40 
+
+Feature: race: 
+Slice: White, Precision: 0.76, Recall: 0.62, FBeta: 0.68 
+Slice: Asian-Pac-Islander, Precision: 0.67, Recall: 0.55, FBeta: 0.60 
+Slice: Black, Precision: 0.79, Recall: 0.48, FBeta: 0.60 
+Slice: Other, Precision: 0.67, Recall: 0.67, FBeta: 0.67 
+Slice: Amer-Indian-Eskimo, Precision: 1.00, Recall: 0.71, FBeta: 0.83 
+
+Feature: sex: 
+Slice: Male, Precision: 0.76, Recall: 0.63, FBeta: 0.69 
+Slice: Female, Precision: 0.73, Recall: 0.50, FBeta: 0.59 
+
+Feature: native-country: 
+Slice: United-States, Precision: 0.76, Recall: 0.60, FBeta: 0.67 
+Slice: Puerto-Rico, Precision: 0.80, Recall: 1.00, FBeta: 0.89 
+Slice: India, Precision: 0.60, Recall: 0.60, FBeta: 0.60 
+Slice: Mexico, Precision: 0.60, Recall: 0.75, FBeta: 0.67 
+Slice: Germany, Precision: 0.92, Recall: 0.92, FBeta: 0.92 
+Slice: ?, Precision: 0.73, Recall: 0.54, FBeta: 0.62 
+Slice: Nicaragua, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Jamaica, Precision: 0.50, Recall: 1.00, FBeta: 0.67 
+Slice: El-Salvador, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Greece, Precision: 0.67, Recall: 1.00, FBeta: 0.80 
+Slice: Poland, Precision: 1.00, Recall: 0.50, FBeta: 0.67 
+Slice: Philippines, Precision: 0.90, Recall: 0.69, FBeta: 0.78 
+Slice: Canada, Precision: 0.50, Recall: 0.50, FBeta: 0.50 
+Slice: Italy, Precision: 0.50, Recall: 0.25, FBeta: 0.33 
+Slice: Vietnam, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Yugoslavia, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Haiti, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Japan, Precision: 0.43, Recall: 1.00, FBeta: 0.60 
+Slice: South, Precision: 0.50, Recall: 1.00, FBeta: 0.67 
+Slice: Laos, Precision: 1.00, Recall: 0.00, FBeta: 0.00 
+Slice: Portugal, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Cuba, Precision: 0.50, Recall: 0.67, FBeta: 0.57 
+Slice: Iran, Precision: 0.25, Recall: 0.50, FBeta: 0.33 
+Slice: Columbia, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: England, Precision: 0.60, Recall: 0.60, FBeta: 0.60 
+Slice: Dominican-Republic, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: China, Precision: 1.00, Recall: 0.80, FBeta: 0.89 
+Slice: Cambodia, Precision: 1.00, Recall: 0.00, FBeta: 0.00 
+Slice: Hungary, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Honduras, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: France, Precision: 1.00, Recall: 0.67, FBeta: 0.80 
+Slice: Ecuador, Precision: 1.00, Recall: 0.00, FBeta: 0.00 
+Slice: Taiwan, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Trinadad&Tobago, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Ireland, Precision: 1.00, Recall: 0.67, FBeta: 0.80 
+Slice: Thailand, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Scotland, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Guatemala, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Hong, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Outlying-US(Guam-USVI-etc), Precision: 1.00, Recall: 1.00, FBeta: 1.00 
+Slice: Peru, Precision: 1.00, Recall: 1.00, FBeta: 1.00 
