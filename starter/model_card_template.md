@@ -6,7 +6,7 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 This is a machine learning model where we have chosen Random Forest Classifier to classify salary thresholds for people in the dataset.
 
 ## Intended Use
-This model was designed as part of the project for Udacity Machine Learning DevOps Engineer nanodegree/
+This model was designed as part of the project for Udacity Machine Learning DevOps Engineer nanodegree.
 
 ## Training Data
 The training data was 80% of the total dataset. We processed the data in which we one hot encoded categorical features, and employed a label binarizer for the labels.
@@ -31,7 +31,7 @@ Our model achieved:
 
 
 ## Ethical Considerations
-* We have iterated the performance over categorical slices to identify whether there are any potential biases in the model. These slice performances can be found in ```slices_output.txt```.
+We have iterated the performance over categorical slices to identify whether there are any potential biases in the model. These slice performances can be found in ```slices_output.txt```.
 
 ## Caveats and Recommendations
 
