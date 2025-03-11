@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 @pytest.fixture
 def data():
-    data = pd.read_csv("data/census.csv")
+    data = pd.read_csv("starter/data/census.csv")
     return data
 
 @pytest.fixture
@@ -47,7 +47,7 @@ def processed_data(data, categorical_features):
 
 @pytest.fixture
 def model():
-    return joblib.load('model/model.pkl')
+    return joblib.load('starter/model/model.pkl')
 
 # Testing functioms
 
