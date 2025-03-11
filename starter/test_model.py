@@ -46,8 +46,11 @@ def processed_data(data, categorical_features):
     return X_train, y_train, X_test, y_test
 
 @pytest.fixture
-def model():
-    return joblib.load('starter/model/model.pkl')
+def model(processed_data):
+
+    X_train, y_train, _, _ = processed_data
+    rf_model= train_model(X_train, y_train)
+    return rf_model
 
 # Testing functioms
 
