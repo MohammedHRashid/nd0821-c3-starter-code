@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from typing import Union
 from pydantic import BaseModel, Field 
 import joblib
+from typing import List
 import pandas as pd
 from starter.ml.data import process_data
-from starter.ml.model import train_model, compute_model_metrics, inference
+from starter.ml.model import inference
 
 # Loading model
 
@@ -13,7 +13,7 @@ encoder = joblib.load('model/encoder.pkl')
 lb = joblib.load("model/lb.pkl")
 
 
-# Declare data object
+# Declare data object with correct alias
 
 class Data(BaseModel):
     age: int 
@@ -21,7 +21,7 @@ class Data(BaseModel):
     fnlgt: int 
     education: str 
     education_num: int = Field(..., alias="education-num")
-    marital_status: str 
+    marital_status: str = Field(..., alias="marital-status")
     occupation: str
     relationship: str 
     race: str 
@@ -30,9 +30,9 @@ class Data(BaseModel):
     capital_loss: int = Field(..., alias="capital-loss")
     hours_per_week: int  = Field(..., alias="hours-per-week")
     native_country: str = Field(..., alias="native-country")
-    salary: str
     
-model_config = {
+    # Example data sample
+    model_config = {
         "json_schema_extra": {
             "example": { 
                 "age": 32,
@@ -48,8 +48,7 @@ model_config = {
                 "capital_gain": 0,
                 "capital_loss": 0,
                 "hours_per_week": 40,
-                "native_country": "United-States",
-                "salary": "<=50K",
+                "native_country": "United-States"
             }
         }
     }
@@ -61,18 +60,34 @@ app = FastAPI()
 
 # Welcome Message
 @app.get("/")
-def welcome_message() -> dict:
-    return {"message": "Welcome User to the model's API"}
+def welcome_message() -> str:
+    return"Welcome User to the model's API"
 
-# Fixing data
 
-@app.post("/fixed_data/")
-def prepare_data_for_model(data: list[Data]):  
-    # Relabelling columns with hyphens
+# Making Predictions
+@app.post("/model_predictions/")
+def make_predictions(data: List[Data]) -> dict:
     df = pd.DataFrame([item.dict(by_alias=True) for item in data])
-    return df.to_dict(orient="records")
 
-# Making predictions
+    # Define categorical features
+    categorical_features = [
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",]
 
-@app.post('/model_predictions/')
-def make_predictions()
+    # Process input data (encode categorical features)
+    input_data, _, _, _ = process_data(df , categorical_features, encoder=encoder, lb=lb, training=False)
+
+    # Make predictions
+    preds = inference(model, input_data)
+
+    # Convert predictions to human-readable labels
+    pred_labels = lb.inverse_transform(preds)
+
+    # Return predictions
+    return {"predictions": pred_labels.tolist()}
