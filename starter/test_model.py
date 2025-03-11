@@ -76,7 +76,7 @@ def test_function_compute_metrics(processed_data,model):
     '''
     X_train, y_train , _, _ = processed_data
     
-    preds = model.predict(X_train)
+    preds = inference(model,X_train)
     
     precision, recall, fbeta = compute_model_metrics(y_train, preds)
     
