@@ -6,8 +6,7 @@ import pandas as pd
 from starter.ml.data import process_data
 from starter.ml.model import inference
 
-# Loading model
-
+# Loading model and encoders 
 model = joblib.load("model/model.pkl")
 encoder = joblib.load('model/encoder.pkl')
 lb = joblib.load("model/lb.pkl")
@@ -39,16 +38,16 @@ class Data(BaseModel):
                 "workclass": "Private",
                 "fnlgt": 186824,
                 "education": "HS-grad",
-                "education_num": 9,
-                "marital_status": "Never-married",
+                "education-num": 9,
+                "marital-status": "Never-married",
                 "occupation": "Machine-op-inspct",
                 "relationship": "Unmarried",
                 "race": "White",
                 "sex": "Male",
-                "capital_gain": 0,
-                "capital_loss": 0,
-                "hours_per_week": 40,
-                "native_country": "United-States"
+                "capital-gain": 0,
+                "capital-loss": 0,
+                "hours-per-week": 40,
+                "native-country": "United-States"
             }
         }
     }
@@ -80,14 +79,13 @@ def make_predictions(data: List[Data]) -> dict:
         "sex",
         "native-country",]
 
-    # Process input data (encode categorical features)
+    # Process input data using same encoding as training data
     input_data, _, _, _ = process_data(df , categorical_features, encoder=encoder, lb=lb, training=False)
 
-    # Make predictions
+    # Make inference predictions
     preds = inference(model, input_data)
 
-    # Convert predictions to human-readable labels
+    # Convert predictions to back to original labels
     pred_labels = lb.inverse_transform(preds)
 
-    # Return predictions
     return {"predictions": pred_labels.tolist()}
