@@ -35,7 +35,7 @@ def processed_data(data, categorical_features):
 
 
     # Process train data    
-    X_train, y_train, encoder, lb = process_data(
+    X_train, y_train, encoder, lb = processed_data(
         train, categorical_features=categorical_features, label="salary", training=True
         )
 
