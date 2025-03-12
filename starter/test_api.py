@@ -33,7 +33,7 @@ def test_prediction_1():
         "race": "White",
         "sex": "Female",
         "capital-gain": 0,  
-        "capital_loss": 0,  
+        "capital-loss": 0,  
         "hours-per-week": 45,  
         "native-country": "United-States"  
     }
