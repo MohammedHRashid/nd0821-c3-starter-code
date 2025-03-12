@@ -38,13 +38,14 @@ def test_prediction_1():
         "native-country": "United-States"
     }
     
-    r = client.post("/model_predictions/", json=row)
+    r = client.post("/model_predictions/", json=[row])
     
     # Testing if status code is a success
     assert r.status_code == 200
     
     # We expect this to have prediction >50K
     expected_prediction = [">50K"]  
+    print(r.json())
     assert r.json()==  {"predictions": expected_prediction}
     
 # Testing second prediction
