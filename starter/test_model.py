@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 @pytest.fixture
 def data():
-    data = pd.read_csv("starter/data/census.csv")
+    data = pd.read_csv("data/census.csv")
     return data
 
 @pytest.fixture
