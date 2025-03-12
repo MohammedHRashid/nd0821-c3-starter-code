@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+import pytest
 
 # Importing our API app
 from main import app
