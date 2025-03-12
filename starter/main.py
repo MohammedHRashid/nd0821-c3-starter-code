@@ -66,7 +66,7 @@ def welcome_message() -> str:
 # Making Predictions
 @app.post("/model_predictions/")
 def make_predictions(data: List[Data]) -> dict:
-    df = pd.DataFrame([item.model_dump(by_alias=True) for item in data])
+    df = pd.DataFrame([item.dict(by_alias=True) for item in data])
 
     # Define categorical features
     categorical_features = [
