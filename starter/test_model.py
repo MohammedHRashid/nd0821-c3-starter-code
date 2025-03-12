@@ -6,10 +6,13 @@ from starter.ml.model import train_model, compute_model_metrics, inference
 from sklearn.model_selection import train_test_split
 import joblib
 from sklearn.ensemble import RandomForestClassifier
+import os
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
 @pytest.fixture
 def data():
-    data = pd.read_csv("data/census.csv")
+    data = pd.read_csv(os.path.join(base_dir, "data", "census.csv"))
     return data
 
 @pytest.fixture
