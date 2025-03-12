@@ -37,7 +37,7 @@ def test_prediction_1():
         "native-country": "United-States"
     }
     
-    r = client.post("/model_predictions", json=[row])
+    r = client.post("/model_predictions/", json=[row])
     
     # Testing if status code is a success
     assert r.status_code == 200
@@ -66,7 +66,7 @@ def test_prediction_2():
         "native-country": "United-States"
     }
     
-    r = client.post("/model_predictions", json = [row])
+    r = client.post("/model_predictions/", json = [row])
     
     # Testing if status code is a success
     assert r.status_code == 200
