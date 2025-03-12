@@ -88,4 +88,4 @@ def make_predictions(data: List[Data]) -> dict:
     # Convert predictions to back to original labels
     pred_labels = lb.inverse_transform(preds)
 
-    return {"predictions": pred_labels.tolist()}
+    return {"predictions": list(pred_labels)}
