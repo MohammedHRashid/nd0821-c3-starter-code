@@ -26,19 +26,24 @@ def test_prediction_1():
         "workclass": "Self-emp-not-inc",
         "fnlgt": 292175,
         "education": "Masters",
-        "education-num": 14,
-        "marital-status": "Divorced",
+        "education_num": 14,  
+        "marital_status": "Divorced",
         "occupation": "Exec-managerial",
         "relationship": "Unmarried",
         "race": "White",
         "sex": "Female",
-        "capital-gain": 0,
-        "capital-loss": 0,
-        "hours-per-week": 45,
-        "native-country": "United-States"
+        "capital_gain": 0,  
+        "capital_loss": 0,  
+        "hours_per_week": 45,  
+        "native_country": "United-States"  
     }
     
-    r = client.post("/model_predictions/", json=[row])
+    
+    r = client.post(
+        "/model_predictions/", 
+        data=json.dumps([row]), 
+        headers={"Content-Type": "application/json"} 
+    )
     
     # Testing if status code is a success
     assert r.status_code == 200
