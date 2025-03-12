@@ -7,8 +7,8 @@ from starter.ml.data import process_data
 from starter.ml.model import inference
 
 # Loading model and encoders 
-model = joblib.load("starter/model/model.pkl")
-encoder = joblib.load('starter/model/encoder.pkl')
+model = joblib.load("model/model.pkl")
+encoder = joblib.load('model/encoder.pkl')
 lb = joblib.load("starter/model/lb.pkl")
 
 
