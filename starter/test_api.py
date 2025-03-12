@@ -47,12 +47,12 @@ def test_prediction_1():
     # We expect this to have prediction >50K
     expected_prediction = [">50K"]  
     print(r.json())
-    assert r.json()==  {"predictions": expected_prediction}
+    assert r.json()["predictions"] == expected_prediction
     
 # Testing second prediction
 def test_prediction_2():
     
-    row = { 
+    row = { \
         "age": 39,
         "workclass": "Private",
         "fnlgt": 367260,
