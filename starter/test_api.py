@@ -39,11 +39,7 @@ def test_prediction_1():
     }
     
     
-    r = client.post(
-        "/model_predictions/", 
-        data=json.dumps([row]), 
-        headers={"Content-Type": "application/json"} 
-    )
+    r = client.post("/model_predictions/", json = [row])
     
     # Testing if status code is a success
     assert r.status_code == 200
