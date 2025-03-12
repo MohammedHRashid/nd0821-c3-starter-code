@@ -18,42 +18,22 @@ lb = joblib.load(os.path.join(base_dir, "model", "lb.pkl"))
 # Declare data object with correct alias
 
 class Data(BaseModel):
-    age: int 
-    workclass: str
-    fnlgt: int 
-    education: str 
-    education_num: int = Field(..., alias="education-num")
-    marital_status: str = Field(..., alias="marital-status")
-    occupation: str
-    relationship: str 
-    race: str 
-    sex: str
-    capital_gain: int = Field(..., alias="capital-gain")
-    capital_loss: int = Field(..., alias="capital-loss")
-    hours_per_week: int  = Field(..., alias="hours-per-week")
-    native_country: str = Field(..., alias="native-country")
+    age: int = Field(..., example=32)
+    workclass: str = Field(..., example="Private")
+    fnlgt: int = Field(..., example=186824)
+    education: str = Field(..., example="HS-grad")
+    education_num: int = Field(..., alias="education-num", example=9)
+    marital_status: str = Field(..., alias="marital-status", example="Never-married")
+    occupation: str = Field(..., example="Machine-op-inspct")
+    relationship: str = Field(..., example="Unmarried")
+    race: str = Field(..., example="White")
+    sex: str = Field(..., example="Male")
+    capital_gain: int = Field(..., alias="capital-gain", example=0)
+    capital_loss: int = Field(..., alias="capital-loss", example=0)
+    hours_per_week: int = Field(..., alias="hours-per-week", example=40)
+    native_country: str = Field(..., alias="native-country", example="United-States")
     
-    # Example data sample
-    model_config = {
-        "json_schema_extra": {
-            "example": { 
-                "age": 32,
-                "workclass": "Private",
-                "fnlgt": 186824,
-                "education": "HS-grad",
-                "education-num": 9,
-                "marital-status": "Never-married",
-                "occupation": "Machine-op-inspct",
-                "relationship": "Unmarried",
-                "race": "White",
-                "sex": "Male",
-                "capital-gain": 0,
-                "capital-loss": 0,
-                "hours-per-week": 40,
-                "native-country": "United-States"
-            }
-        }
-    }
+
     
 
 # Initialise app
@@ -70,7 +50,7 @@ def welcome_message() -> str:
 @app.post("/model_predictions/")
 def make_predictions(data: List[Data]) -> dict:
     #df = pd.DataFrame([item.dict(by_alias=True) for item in data])
-    df = pd.DataFrame([item.dict(by_alias=True, exclude={"model_config"}) for item in data])
+    df = pd.DataFrame([item.dict(by_alias=True) for item in data])
 
     # Define categorical features
     categorical_features = [
