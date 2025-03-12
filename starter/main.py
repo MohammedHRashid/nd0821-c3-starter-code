@@ -81,6 +81,7 @@ def make_predictions(data: List[Data]) -> dict:
 
     # Process input data using same encoding as training data
     input_data, _, _, _ = process_data(df, categorical_features, encoder=encoder, lb=lb, training=False)
+    print(input_data)
 
     # Make inference predictions
     preds = inference(model, input_data)
