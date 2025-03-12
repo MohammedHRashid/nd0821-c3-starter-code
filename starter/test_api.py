@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 import pytest
 import json
+from typing import List
 
 # Importing our API app
 from main import app
@@ -37,7 +38,7 @@ def test_prediction_1():
         "native-country": "United-States"
     }
     
-    r = client.post("/model_predictions/", json=[row])
+    r = client.post("/model_predictions/", json=List[row])
     
     # Testing if status code is a success
     assert r.status_code == 200
