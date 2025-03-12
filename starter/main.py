@@ -5,11 +5,14 @@ from typing import List
 import pandas as pd
 from starter.ml.data import process_data
 from starter.ml.model import inference
+import os
 
 # Loading model and encoders 
-model = joblib.load("model/model.pkl")
-encoder = joblib.load('model/encoder.pkl')
-lb = joblib.load("starter/model/lb.pkl")
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(os.path.join(base_dir, "model", "model.pkl"))
+encoder = joblib.load(os.path.join(base_dir, "model", "encoder.pkl"))
+lb = joblib.load(os.path.join(base_dir, "model", "lb.pkl"))
 
 
 # Declare data object with correct alias
